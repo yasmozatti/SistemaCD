@@ -50,6 +50,13 @@ def chama_segunda_tela():
     formulario.close()
     segunda_tela.pushButton_2.clicked.connect(voltar_formulario)
 
+    cursor = banco.cursor()
+    comando_SQL = "SELECT * FROM produtos"
+    cursor.execute(comando_SQL)
+    dados_lidos = cursor.fetchall()
+    segunda_tela.tableWidget.setRowCount(len(dados_lidos))
+    segunda_tela.tableWidget.setColumnCount(5)
+
 
 app = QtWidgets.QApplication([])
 formulario =uic.loadUi("form.ui")

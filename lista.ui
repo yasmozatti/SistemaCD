@@ -14,15 +14,15 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:1 rgb(237, 237,237, 255))</string>
+   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:1 rgba(237, 237, 237, 255))</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>70</y>
-      <width>251</width>
+      <x>100</x>
+      <y>40</y>
+      <width>241</width>
       <height>71</height>
      </rect>
     </property>
@@ -137,7 +137,7 @@
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>400</y>
+      <y>450</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -159,6 +159,70 @@
     <property name="text">
      <string>VOLTAR</string>
     </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>411</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI,sans-serif</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTableWidget {
+	border-radius: 10px;
+	border: 1px solid #aaa;
+    background: white;
+    gridline-color: #ddd; /* linhas sutis */
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #333;
+    selection-background-color: #e6f0ff;
+    selection-color: #000;
+    alternate-background-color: #f9f9f9;
+}
+
+QTableWidget::item {
+    border-bottom: 1px solid #ddd; 
+    border-right: 1px solid #ddd;  
+    padding: 8px;
+}
+
+QHeaderView::section {
+    background-color: white;
+    border: none;
+    border-bottom: 2px solidrgb(255, 53, 178); 
+    font-weight: bold;
+    font-size: 13px;
+    color: #444;
+    padding: 6px;
+}
+
+QTableCornerButton::section {
+    background-color: white;
+    border: none;
+}
+</string>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderHighlightSections">
+     <bool>false</bool>
+    </attribute>
    </widget>
   </widget>
  </widget>
