@@ -11,13 +11,13 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Manager de Produto</string>
+   <string>Dialog</string>
   </property>
   <property name="toolTip">
    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:1 rgb(255, 255, 255))</string>
+   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:1 rgb(237, 237, 237, 255))</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -734,8 +734,8 @@ hover {
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>420</y>
+     <x>80</x>
+     <y>430</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -756,6 +756,33 @@ hover {
    </property>
    <property name="text">
     <string>ENVIAR</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>430</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Gill Sans MT Condensed</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-bottom: 0.5px solid #aaa;
+    border-radius: 8px;
+    padding: 6px 12px;</string>
+   </property>
+   <property name="text">
+    <string>LISTAR</string>
    </property>
   </widget>
  </widget>

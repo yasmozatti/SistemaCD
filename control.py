@@ -41,9 +41,21 @@ def funcao_principal():
     formulario.lineEdit_2.setText("")
     formulario.lineEdit_3.setText("")
 
+def voltar_formulario():
+    formulario.show()
+    segunda_tela.close()
+
+def chama_segunda_tela():
+    segunda_tela.show()
+    formulario.close()
+    segunda_tela.pushButton_2.clicked.connect(voltar_formulario)
+
+
 app = QtWidgets.QApplication([])
 formulario =uic.loadUi("form.ui")
+segunda_tela =uic.loadUi("lista.ui")
 formulario.pushButton.clicked.connect(funcao_principal)
+formulario.pushButton_2.clicked.connect(chama_segunda_tela)
 
 formulario.show()
 app.exec()
