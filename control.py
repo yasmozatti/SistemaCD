@@ -22,7 +22,7 @@ def funcao_principal():
     elif formulario.radioButton_2.isChecked():
         categoria = "Alimentos"
     elif formulario.radioButton_3.isChecked():
-        categoria: "Eletrônicos"
+        categoria: "Eletronicos" # type: ignore
     else:
         categoria = ""
     

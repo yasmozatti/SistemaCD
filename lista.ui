@@ -14,16 +14,16 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:1 rgba(237, 237, 237, 255))</string>
+   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:1 rgba(0, 0, 0, 0))</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>40</y>
+      <y>50</y>
       <width>241</width>
-      <height>71</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="palette">
@@ -136,8 +136,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>450</y>
+      <x>240</x>
+      <y>440</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -163,9 +163,9 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>50</x>
       <y>100</y>
-      <width>411</width>
+      <width>351</width>
       <height>331</height>
      </rect>
     </property>
@@ -190,15 +190,15 @@
 }
 
 QTableWidget::item {
-    border-bottom: 1px solid #ddd; 
-    border-right: 1px solid #ddd;  
+    border-bottom: 1px solid #ddd; /* linhas horizontais finas */
+    border-right: 1px solid #ddd;  /* linhas verticais finas */
     padding: 8px;
 }
 
 QHeaderView::section {
     background-color: white;
     border: none;
-    border-bottom: 2px solidrgb(255, 53, 178); 
+    border-bottom: 2px solid #6666ff; /* linha inferior mais forte */
     font-weight: bold;
     font-size: 13px;
     color: #444;
@@ -209,10 +209,76 @@ QTableCornerButton::section {
     background-color: white;
     border: none;
 }
+
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: transparent;
+    width: 0px;
+    height: 0px;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+    margin: 2px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(150, 150, 150, 150); /* cinza com opacidade */
+    min-height: 30px;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;
+    background: none;
+    border: none;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 8px;
+    margin: 2px;
+}
+
+QScrollBar::handle:horizontal {
+    background: rgba(150, 150, 150, 150);
+    min-width: 30px;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0px;
+    background: none;
+    border: none;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
 </string>
     </property>
-    <attribute name="horizontalHeaderVisible">
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
+    </property>
+    <property name="autoScrollMargin">
+     <number>11</number>
+    </property>
+    <property name="tabKeyNavigation">
      <bool>false</bool>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>120</number>
     </attribute>
     <attribute name="horizontalHeaderHighlightSections">
      <bool>false</bool>
@@ -223,6 +289,58 @@ QTableCornerButton::section {
     <attribute name="verticalHeaderHighlightSections">
      <bool>false</bool>
     </attribute>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>CÓDIGO</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>DESCRIÇÃO</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PREÇO</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>CATEGORIA</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>440</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Gill Sans MT Condensed</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-bottom: 0.5px solid #aaa;
+    border-radius: 8px;
+    padding: 6px 12px;</string>
+    </property>
+    <property name="text">
+     <string>REMOVER</string>
+    </property>
    </widget>
   </widget>
  </widget>
