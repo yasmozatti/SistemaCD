@@ -361,7 +361,7 @@ QScrollBar::sub-page:horizontal {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #fF0000;
+     <string notr="true">background-color:rgb(255, 0, 0);
     color: #333;
     border: none;
     border-bottom: 0.5px solid #aaa;

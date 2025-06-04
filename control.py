@@ -49,6 +49,7 @@ def chama_segunda_tela():
     segunda_tela.show()
     formulario.close()
     segunda_tela.pushButton_2.clicked.connect(voltar_formulario)
+    segunda_tela.pushButton_4.clicked.connect(tela_remove_elemento)
 
     cursor = banco.cursor()
     comando_SQL = "SELECT * FROM produtos"
@@ -60,7 +61,19 @@ def chama_segunda_tela():
     for i in range(0, len(dados_lidos)):
         for j in range(0,5):
             segunda_tela.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
-            
+
+def tela_remove_elemento():
+    cursor = banco.cursor()
+    
+    cursor.execute("SELECT COUNT(*) FROM produtos")
+    total = cursor.fetchone()[0]
+
+    if total > 0:
+        cursor.execute("SELECT id FROM produtos ORDER BY id DESC LIMIT 1")
+        id_ultimo = cursor.fetchone()[0]
+        cursor.execute("DELETE FROM produtos WHERE id = %s", (id_ultimo,))
+        banco.commit()
+
 
 
 app = QtWidgets.QApplication([])

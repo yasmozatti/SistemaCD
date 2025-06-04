@@ -17,7 +17,7 @@
    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:1 rgb(237, 237, 237, 255))</string>
+   <string notr="true">background:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(221, 100, 255, 255), stop:0.568182 rgba(235, 157, 210, 255), stop:0.98 rgba(237, 237, 237, 255), stop:0 rgba(237, 237, 237, 255))</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
