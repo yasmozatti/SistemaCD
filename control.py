@@ -22,7 +22,7 @@ def funcao_principal():
     elif formulario.radioButton_2.isChecked():
         categoria = "Alimentos"
     elif formulario.radioButton_3.isChecked():
-        categoria: "Eletronicos" # type: ignore
+        categoria = "Eletronicos"
     else:
         categoria = ""
     
@@ -64,15 +64,15 @@ def chama_segunda_tela():
 
 def tela_remove_elemento():
     cursor = banco.cursor()
-    
     cursor.execute("SELECT COUNT(*) FROM produtos")
     total = cursor.fetchone()[0]
-
     if total > 0:
         cursor.execute("SELECT id FROM produtos ORDER BY id DESC LIMIT 1")
         id_ultimo = cursor.fetchone()[0]
         cursor.execute("DELETE FROM produtos WHERE id = %s", (id_ultimo,))
         banco.commit()
+        segunda_tela.close()
+        segunda_tela.show()
 
 
 
