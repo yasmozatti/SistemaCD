@@ -124,7 +124,8 @@ def salvar_dados():
     preco = tela_editar.lineEdit_8.text()
     categoria = tela_editar.lineEdit_6.text()
     cursor = banco.cursor()
-    cursor.execute("UPDATE produtos SET codigo = '{}', descricao = '{}', preco = '{}', categoria = '{}' WHERE id = []".format(codigo, descricao,preco,categoria, numero_id))
+    cursor.execute("UPDATE produtos SET codigo = '{}', descricao = '{}', preco = '{}', categoria ='{}' WHERE id = {}".format(codigo,descricao,preco,categoria,numero_id))
+    banco.commit()
     print("Dados salvos")
 
 
@@ -147,7 +148,7 @@ segunda_tela.pushButton_2.clicked.connect(voltar_formulario)
 segunda_tela.pushButton_4.clicked.connect(tela_remove_elemento)
 segunda_tela.pushButton_5.clicked.connect(editar_dados)
 tela_editar.pushButton_2.clicked.connect(voltar_lista)
-tela_editar.pushBotton_5.clicked.connect(salvar_dados)
+tela_editar.pushButton_5.clicked.connect(salvar_dados)
 
 formulario.show()
 app.exec()
